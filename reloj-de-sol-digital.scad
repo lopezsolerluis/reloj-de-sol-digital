@@ -9,6 +9,7 @@ module semicilindro(h,r,center=false){
 }
 
 alto_pixel = 2;
+ancho_pixel = 6;
 radio_semicilindro = 30;
 H = radio_semicilindro+10;
 
