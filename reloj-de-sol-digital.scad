@@ -34,9 +34,13 @@ module digito(alfa){
   for(i=[0:5],j=[0:3]){
     x=(i-2.5)*(alto_pixel+delta_alto);
     y=(j-1.5)*(ancho_pixel+delta_ancho);
-    translate([x,y,0])
-     rayo_de_sol(alfa);
+    translate([x,y,-0.01])
+      rayo_de_sol(alfa);
   } 
 }
 
-digito(alfa=90);
+difference(){
+  rotate([-90,0,0])
+    semicilindro(150,30,center=true);  
+  digito(alfa=90);
+}
