@@ -19,7 +19,9 @@ module rayo_de_sol(alfa){
             [D-alto_pixel/2,H],
             [D+alto_pixel/2,H],
             [alto_pixel/2,0]];
-  polygon(vertices);
+  rotate ([90,0,0])
+    linear_extrude (ancho_pixel)
+      polygon(vertices);
 }
  
 rayo_de_sol(alfa=60);
