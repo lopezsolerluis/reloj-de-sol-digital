@@ -10,6 +10,8 @@ module semicilindro(h,r,center=false){
 
 alto_pixel = 2;
 ancho_pixel = 6;
+delta_alto  = 6.5;
+delta_ancho = 1.5;
 radio_semicilindro = 30;
 H = radio_semicilindro+10;
 
@@ -28,5 +30,14 @@ module rayo_de_sol(alfa){
       polygon(vertices);
 }
  
-rayo_de_sol(alfa=60);
 
+module digito(alfa){
+ for(i=[0:5],j=[0:3]){
+   x=i*(alto_pixel+delta_alto);
+   y=j*(ancho_pixel+delta_ancho);
+   translate([x,y,0])
+    rayo_de_sol(alfa);
+  }
+}
+
+digito(alfa=90);
