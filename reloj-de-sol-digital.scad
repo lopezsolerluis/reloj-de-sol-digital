@@ -31,15 +31,12 @@ module rayo_de_sol(alfa){
 }
  
 module digito(alfa){
-  translate([-2.5*(alto_pixel+delta_alto),
-             -1.5*(ancho_pixel+delta_ancho),
-             0])
-   for(i=[0:5],j=[0:3]){
-    x=i*(alto_pixel+delta_alto);
-    y=j*(ancho_pixel+delta_ancho);
+  for(i=[0:5],j=[0:3]){
+    x=(i-2.5)*(alto_pixel+delta_alto);
+    y=(j-1.5)*(ancho_pixel+delta_ancho);
     translate([x,y,0])
-      rayo_de_sol(alfa);
-   } 
+     rayo_de_sol(alfa);
+  } 
 }
 
 digito(alfa=90);
