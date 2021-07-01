@@ -19,8 +19,12 @@ module rayo_de_sol(alfa){
             [D-alto_pixel/2,H],
             [D+alto_pixel/2,H],
             [alto_pixel/2,0]];
+  // TODO: medir la duracion de esta solucion
+  //       y la de esta otra:
+  //       translate([0,ancho_pixel/2,0])
+  //       Ojo : borrar 'center=true' abajo
   rotate ([90,0,0])
-    linear_extrude (ancho_pixel)
+    linear_extrude(ancho_pixel,center=true)
       polygon(vertices);
 }
  
