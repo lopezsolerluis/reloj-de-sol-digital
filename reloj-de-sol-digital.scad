@@ -29,18 +29,20 @@ module rayo_de_sol(alfa){
     linear_extrude(ancho_pixel,center=true)
       polygon(vertices);
 }
- 
-module digito(alfa){
-  for(i=[0:5],j=[0:3]){
-    x=(i-2.5)*(alto_pixel+delta_alto);
-    y=(j-1.5)*(ancho_pixel+delta_ancho);
+
+dos=[[0,1], [0,2], [1,0], [1,3], [2,3], [3,1], [3,2], [4,0], [5,0], [5,1], [5,2], [5,3]];
+
+module digito(alfa,numero){
+  for(coords=numero){
+    x=(coords[0]-2.5)*(alto_pixel+delta_alto);
+    y=(coords[1]-1.5)*(ancho_pixel+delta_ancho);
     translate([x,y,-0.01])
       rayo_de_sol(alfa);
-  } 
+  }
 }
 
 difference(){
   rotate([-90,0,0])
     semicilindro(150,30,center=true);  
-  digito(alfa=90);
+  digito(90,dos);
 }
