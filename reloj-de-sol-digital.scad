@@ -14,9 +14,13 @@ delta_alto  = 6.5;
 delta_ancho = 1.5;
 radio_semicilindro = 30;
 H = radio_semicilindro+10;
+hemisferio="sur";
 
 function alfa_sur(hora)=270-15*hora; 
 function alfa_norte(hora)=15*hora-90;
+
+function alfa(hora)=
+  hemisferio=="sur" ? alfa_sur(hora) : alfa_norte(hora);
 
 module rayo_de_sol(alfa){
   D=H/tan(alfa);
