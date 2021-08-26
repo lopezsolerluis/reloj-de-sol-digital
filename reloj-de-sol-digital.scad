@@ -15,6 +15,9 @@ delta_ancho = 1.5;
 radio_semicilindro = 30;
 H = radio_semicilindro+10;
 
+function alfa_sur(hora)=270-15*hora; 
+function alfa_norte(hora)=15*hora-90;
+
 module rayo_de_sol(alfa){
   D=H/tan(alfa);
   vertices=[[-alto_pixel/2,0],
