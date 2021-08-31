@@ -22,6 +22,9 @@ function alfa_norte(hora)=15*hora-90;
 function alfa(hora)=
   hemisferio=="sur" ? alfa_sur(hora) : alfa_norte(hora);
 
+function truncate(n)=
+  n<0 ? ceil(n) : floor(n);
+
 module rayo_de_sol(alfa){
   D=H/tan(alfa);
   vertices=[[-alto_pixel/2,0],
