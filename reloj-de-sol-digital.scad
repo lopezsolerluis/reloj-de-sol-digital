@@ -122,7 +122,15 @@ module digito(alfa,numero){
 module hora_solar(horas,
                   minutos){
   alfa=alfa(horas+minutos/60);
+  hora_decenas=n_a_digito(horas,1);
+  hora_unidades=n_a_digito(horas,0);
+  minuto_decenas=n_a_digito(minutos,1);
+  minuto_unidades=n_a_digito(minutos,0);
+
+  echo(hora_decenas, hora_unidades, minuto_decenas, minuto_unidades);                    
 }
+
+hora_solar(12,30);
 
 difference(){
   rotate([-90,0,0])
