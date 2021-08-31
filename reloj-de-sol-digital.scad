@@ -111,6 +111,11 @@ module digito(alfa,numero){
   }
 }
 
+module hora_solar(horas,
+                  minutos){
+  alfa=alfa(horas+minutos/60);
+}
+
 difference(){
   rotate([-90,0,0])
     semicilindro(150,30,center=true);  
