@@ -25,6 +25,11 @@ function alfa(hora)=
 function truncate(n)=
   n<0 ? ceil(n) : floor(n);
 
+// p es la posicion del digito a obtener: 
+// 0 para las unidades, 1 para las decenas, etc.
+function n_a_digito(n,p)= 
+  truncate(n/pow(10,p))%10;
+
 module rayo_de_sol(alfa){
   D=H/tan(alfa);
   vertices=[[-alto_pixel/2,0],
