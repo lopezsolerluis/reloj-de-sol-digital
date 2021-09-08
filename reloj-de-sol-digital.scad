@@ -127,7 +127,11 @@ module hora_solar(horas,
   minuto_decenas=n_a_digito(minutos,1);
   minuto_unidades=n_a_digito(minutos,0);
 
-  echo(hora_decenas, hora_unidades, minuto_decenas, minuto_unidades);                    
+  delta_y=ancho_pixel+delta_ancho;
+  translate([0,-8.5*delta_y,0])
+    digito(alfa,hora_decenas);
+  translate([0,-3.5*delta_y,0])
+    digito(alfa,hora_unidades);          
 }
 
 module separador(horas,minutos){
@@ -143,8 +147,7 @@ module cuerpo(largo){
 }
 
 difference(){
-  cuerpo(150);
-  separador(14,0);
-  translate([0,-30,0])
-    digito(60,2);
+  cuerpo(170);
+  separador(12,0);
+  hora_solar(12,0);
 }
