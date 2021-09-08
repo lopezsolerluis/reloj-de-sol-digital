@@ -130,7 +130,8 @@ module hora_solar(horas,
   echo(hora_decenas, hora_unidades, minuto_decenas, minuto_unidades);                    
 }
 
-module separador(alfa){
+module separador(horas,minutos){
+  alfa=alfa(horas+minutos/60);
   for(i=[-1,1])
     translate([i*0.5*(alto_pixel+delta_alto), 0,-.01])
       rayo_de_sol(alfa);
@@ -139,7 +140,7 @@ module separador(alfa){
 difference(){
   rotate([-90,0,0])
     semicilindro(150,30,center=true);  
-  separador(60);
+  separador(14,0);
   translate([0,-30,0])
     digito(60,2);
 }
