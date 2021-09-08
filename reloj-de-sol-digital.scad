@@ -136,10 +136,14 @@ module separador(horas,minutos){
     translate([i*0.5*(alto_pixel+delta_alto), 0,-.01])
       rayo_de_sol(alfa);
 }
-  
-difference(){
+ 
+module cuerpo(largo){
   rotate([-90,0,0])
-    semicilindro(150,30,center=true);  
+    semicilindro(largo, radio_semicilindro, center=true);  
+}
+
+difference(){
+  cuerpo(150);
   separador(14,0);
   translate([0,-30,0])
     digito(60,2);
