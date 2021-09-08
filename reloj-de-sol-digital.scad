@@ -130,10 +130,16 @@ module hora_solar(horas,
   echo(hora_decenas, hora_unidades, minuto_decenas, minuto_unidades);                    
 }
 
-hora_solar(12,30);
-
+module separador(alfa){
+  for(i=[-1,1])
+    translate([i*0.5*(alto_pixel+delta_alto), 0,-.01])
+      rayo_de_sol(alfa);
+}
+  
 difference(){
   rotate([-90,0,0])
     semicilindro(150,30,center=true);  
-  digito(90,2);
+  separador(60);
+  translate([0,-30,0])
+    digito(60,2);
 }
