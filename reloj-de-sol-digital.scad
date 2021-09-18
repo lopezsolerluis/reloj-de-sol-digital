@@ -33,6 +33,7 @@ function n_a_digito(n,p)=
   truncate(n/pow(10,p))%10;
 
 module rayo_de_sol(alfa){
+  assert(alfa!=0 && alfa!=180, "'alfa' no debe ser nulo ni llano.");
   D=H/tan(alfa);
   vertices=[[-alto_pixel/2,0],
             [D-alto_pixel/2,H],
@@ -160,11 +161,8 @@ module cuerpo(largo){
 module reloj_de_sol(){
   difference(){
     cuerpo(largo_reloj);
-    for(horas=[6:17],
-        minutos=[0:59])
-          hora_solar(horas,minutos);
-    hora_solar(18,0);
-    }
+    hora_solar(6,0);
+  }
 }
 
 reloj_de_sol();
