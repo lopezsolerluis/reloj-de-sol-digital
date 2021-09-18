@@ -162,7 +162,7 @@ module cuerpo(largo){
 module reloj_de_sol(){
   difference(){
     cuerpo(largo_reloj);
-    hora_solar(21,0);
+    hora_solar(12,0);
   }
 }
 
