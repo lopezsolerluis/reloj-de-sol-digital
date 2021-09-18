@@ -124,7 +124,7 @@ module digito(alfa,numero){
 module hora_solar(horas,
                   minutos){
   hora=horas+minutos/60;
-  assert(hora!=6 && hora!=18,"La hora no debe ser las 6:00 ni las 18:00.");
+  assert(hora>6 && hora<18,"La hora debe encontrarse entre las 6:00 y las 18:00.");
   alfa=alfa(hora);
   hora_decenas=n_a_digito(horas,1);
   hora_unidades=n_a_digito(horas,0);
@@ -162,7 +162,7 @@ module cuerpo(largo){
 module reloj_de_sol(){
   difference(){
     cuerpo(largo_reloj);
-    hora_solar(18,0);
+    hora_solar(21,0);
   }
 }
 
