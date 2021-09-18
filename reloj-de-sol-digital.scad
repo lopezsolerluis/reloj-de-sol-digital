@@ -160,8 +160,11 @@ module cuerpo(largo){
 module reloj_de_sol(){
   difference(){
     cuerpo(largo_reloj);
-    hora_solar(12,0);
-  }
+    for(horas=[6:17],
+        minutos=[0:59])
+          hora_solar(horas,minutos);
+    hora_solar(18,0);
+    }
 }
 
 reloj_de_sol();
