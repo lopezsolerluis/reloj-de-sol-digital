@@ -8,13 +8,15 @@ module semicilindro(h,r,center=false){
   }
 }
 
+hemisferio="sur";
 alto_pixel = 2;
 ancho_pixel = 6;
 delta_alto  = 6.5;
 delta_ancho = 1.5;
+borde = 10;
 radio_semicilindro = 30;
 H = radio_semicilindro+10;
-hemisferio="sur";
+largo_reloj = 21*ancho_pixel + 20*delta_ancho + 2*borde;
 
 function alfa_sur(hora)=270-15*hora; 
 function alfa_norte(hora)=15*hora-90;
@@ -155,7 +157,11 @@ module cuerpo(largo){
     semicilindro(largo, radio_semicilindro, center=true);  
 }
 
-difference(){
-  cuerpo(170);
-  hora_solar(13,46);
+module reloj_de_sol(){
+  difference(){
+    cuerpo(largo_reloj);
+    hora_solar(12,0);
+  }
 }
+
+reloj_de_sol();
