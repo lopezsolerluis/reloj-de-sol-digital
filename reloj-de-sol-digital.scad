@@ -33,7 +33,6 @@ function n_a_digito(n,p)=
   truncate(n/pow(10,p))%10;
 
 module rayo_de_sol(alfa){
-  assert(alfa!=0 && alfa!=180, "'alfa' no debe ser nulo ni llano.");
   D=H/tan(alfa);
   vertices=[[-alto_pixel/2,0],
             [D-alto_pixel/2,H],
@@ -124,7 +123,9 @@ module digito(alfa,numero){
 
 module hora_solar(horas,
                   minutos){
-  alfa=alfa(horas+minutos/60);
+  hora=horas+minutos/60;
+  assert(hora!=6 && hora!=18,"La hora no debe ser las 6:00 ni las 18:00.");
+  alfa=alfa(hora);
   hora_decenas=n_a_digito(horas,1);
   hora_unidades=n_a_digito(horas,0);
   minuto_decenas=n_a_digito(minutos,1);
@@ -161,7 +162,7 @@ module cuerpo(largo){
 module reloj_de_sol(){
   difference(){
     cuerpo(largo_reloj);
-    hora_solar(6,0);
+    hora_solar(18,0);
   }
 }
 
