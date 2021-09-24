@@ -9,7 +9,7 @@ module semicilindro(h,r,center=false){
 }
 
 hemisferio="sur";
-alto_pixel = 2;
+alto_pixel = 1.6;
 ancho_pixel = 6;
 delta_alto  = 6.5;
 delta_ancho = 1.5;
@@ -163,7 +163,14 @@ module reloj_de_sol(){
   difference(){
     cuerpo(largo_reloj);
     hora_solar(12,0);
+    hora_solar(12,20);
+    hora_solar(12,40);
+    hora_solar(13,0);
+    hora_solar(13,20);
+    hora_solar(13,40);
   }
 }
+
+$vpr=[90-alfa(13+40/60),0,90];
 
 reloj_de_sol();
