@@ -161,16 +161,13 @@ module cuerpo(largo){
 
 module reloj_de_sol(){
   difference(){
-    cuerpo(largo_reloj);
-    hora_solar(12,0);
-    hora_solar(12,20);
-    hora_solar(12,40);
-    hora_solar(13,0);
-    hora_solar(13,20);
-    hora_solar(13,40);
+    cuerpo(largo_reloj);    
+    hora_solar(6,20);
+    hora_solar(6,40);
+    for(hora=[7:17],
+        minuto=[0,20,40])
+          hora_solar(hora,minuto);
   }
 }
-
-$vpr=[90-alfa(13+40/60),0,90];
 
 reloj_de_sol();
