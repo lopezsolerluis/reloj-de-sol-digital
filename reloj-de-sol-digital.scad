@@ -145,7 +145,7 @@ module hora_solar(horas,
   translate([0,8.5*delta_y,0])
     digito(minuto_unidades,alfa,alfa);  
   // separador
-  separador(hora,minutos);
+  separador(alfa,alfa);
 }
 
 module separador(alfa1,alfa2){
