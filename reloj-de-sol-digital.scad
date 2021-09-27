@@ -110,14 +110,14 @@ digitos = [
  [0, 0, 0, 1],
  [0, 1, 1, 0]]];
  
-module digito(alfa,numero){
+module digito(numero,alfa1,alfa2){
   for(i=[0:5],j=[0:3]){
     digito=digitos[numero];
     if(digito[i][j]==1){
       x=(i-2.5)*(alto_pixel+delta_alto);
       y=(j-1.5)*(ancho_pixel+delta_ancho);
       translate([x,y,-0.01])
-        rayo_de_sol(alfa);
+        haz_de_sol(alfa1,alfa2);
     }
   }
 }
