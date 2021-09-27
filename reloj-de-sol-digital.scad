@@ -148,11 +148,10 @@ module hora_solar(horas,
   separador(hora,minutos);
 }
 
-module separador(horas,minutos){
-  alfa=alfa(horas+minutos/60);
+module separador(alfa1,alfa2){
   for(i=[-1,1])
-    translate([i*0.5*(alto_pixel+delta_alto), 0,-.01])
-      rayo_de_sol(alfa);
+    translate([i*0.5*(alto_pixel+delta_alto), 0, -.01])
+      haz_de_sol(alfa1,alfa2);
 }
  
 module cuerpo(largo){
