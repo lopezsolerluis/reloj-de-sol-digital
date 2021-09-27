@@ -122,7 +122,7 @@ module digito(numero,alfa1,alfa2){
   }
 }
 
-module hora_solar(horas,
+module hora_solar(horas, 
                   minutos){
   hora=horas+minutos/60;
   assert(hora>6 && hora<18,"La hora debe encontrarse entre las 6:00 y las 18:00.");
@@ -131,21 +131,21 @@ module hora_solar(horas,
   hora_unidades=n_a_digito(horas,0);
   minuto_decenas=n_a_digito(minutos,1);
   minuto_unidades=n_a_digito(minutos,0);
-
+                    
   delta_y=ancho_pixel+delta_ancho;
-   // horas         
+  // horas    
   if (hora_decenas != 0)
     translate([0,-8.5*delta_y,0])
-      digito(alfa,hora_decenas);
+      digito(hora_decenas,alfa,alfa);
   translate([0,-3.5*delta_y,0])
-    digito(alfa,hora_unidades);  
+    digito(hora_unidades,alfa,alfa);  
   // minutos
   translate([0,3.5*delta_y,0])
-    digito(alfa,minuto_decenas);
+    digito(minuto_decenas,alfa,alfa);
   translate([0,8.5*delta_y,0])
-    digito(alfa,minuto_unidades);        
+    digito(minuto_unidades,alfa,alfa);  
   // separador
-  separador(horas,minutos);
+  separador(hora,minutos);
 }
 
 module separador(horas,minutos){
