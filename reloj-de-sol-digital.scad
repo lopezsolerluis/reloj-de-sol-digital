@@ -32,11 +32,12 @@ function truncate(n)=
 function n_a_digito(n,p)= 
   truncate(n/pow(10,p))%10;
 
-module rayo_de_sol(alfa){
-  D=H/tan(alfa);
+module haz_de_sol(alfa1,alfa2){
+  D1=H/tan(alfa1);
+  D2=H/tan(alfa2);
   vertices=[[-alto_pixel/2,0],
-            [D-alto_pixel/2,H],
-            [D+alto_pixel/2,H],
+            [D2-alto_pixel/2,H],
+            [D1+alto_pixel/2,H],
             [alto_pixel/2,0]];
   // TODO: medir la duracion de esta solucion
   //       y la de esta otra:
