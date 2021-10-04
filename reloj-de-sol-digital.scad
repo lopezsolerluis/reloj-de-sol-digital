@@ -194,6 +194,14 @@ module reloj_de_sol_continuo(){
         }   
     // separador
     separador(alfa(6+20/60),alfa(17+40/60));  
+    // unidades de hora
+    translate([0,-3.5*delta_y,0])
+      for(hora=[6:17]){
+        hora_unidades=n_a_digito(hora,0);
+        digito(hora_unidades,
+               alfa(hora>6?hora:hora+20/60),
+               alfa(hora>6?hora:hora+20/60));
+      }        
   }
 }
 
