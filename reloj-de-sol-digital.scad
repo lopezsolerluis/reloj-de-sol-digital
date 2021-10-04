@@ -181,28 +181,30 @@ module reloj_de_sol_continuo(){
     cuerpo(largo_reloj);    
     // unidades de minuto
     translate([0,8.5*delta_y,0])
-      digito(0,alfa(6+20/60),alfa(17+40/60));  
-        // decenas de minuto
-    translate([0,3.5*delta_y,0])
-      for(hora=[6:17],
-          minutos=[0,20,40])
-        if((hora+minutos/60) > 6) {
-          minuto_decenas=n_a_digito(minutos,1);
-          digito(minuto_decenas,
-                 alfa(hora+minutos/60),
-                 alfa(hora+minutos/60));
-        }   
+      digito(0,alfa(9),alfa(15+10/60));  
+    // decenas de minuto
+    translate([0,3.5*delta_y,0]){
+      for(hora=[9:14],
+          minutos=[0,20,40]){
+            minuto_decenas=n_a_digito(minutos,1);
+            digito(minuto_decenas,
+                   alfa(hora+minutos/60),
+                   alfa(hora+(minutos+10)/60));
+            }
+       digito(0,alfa(15),alfa(15+10/60));
+       }                    
     // separador
-    separador(alfa(6+20/60),alfa(17+40/60));  
-    // unidades de hora
+    separador(alfa(9),alfa(15+10/60));      
+    // unidades de hora       
     translate([0,-3.5*delta_y,0])
       for(hora=[9:15]){
         hora_unidades=n_a_digito(hora,0);
         digito(hora_unidades,
                alfa(hora),
-               alfa(hora<15 ? hora+50/60 : hora+10/60));
-      }        
+               alfa(hora<15?hora+50/60:hora+10/60));
+      }
   }
 }
 
+$vpr=[90-alfa(12+50/60),0,90];
 reloj_de_sol_continuo();
