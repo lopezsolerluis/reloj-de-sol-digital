@@ -203,8 +203,11 @@ module reloj_de_sol_continuo(){
                alfa(hora),
                alfa(hora<15?hora+50/60:hora+10/60));
       }
+    // decenas de hora
+    translate([0,-8.5*delta_y,0])
+      digito(1,alfa(10),alfa(15+10/60));    
   }
 }
 
-$vpr=[90-alfa(12+50/60),0,90];
+$vpr=[90-alfa(12+40/60),0,90];
 reloj_de_sol_continuo();
