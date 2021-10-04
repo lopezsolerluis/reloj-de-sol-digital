@@ -159,12 +159,18 @@ module cuerpo(largo){
     semicilindro(largo, radio_semicilindro, center=true);  
 }
 
-module reloj_de_sol(){
+/* Reloj de Sol de algunas horas puntuales.
+   'vector_horas' es un vector con las horas y minutos que el usuario desea mostrar; por ej.: [[12,00], [7,13], [16,23]] representa las 12:00, 7:13 y 16:23.
+*/
+module reloj_de_sol_discreto(vector_horas){
   difference(){
     cuerpo(largo_reloj);    
-    hora_solar(12,0);
-    hora_solar(15,40);
+    for(hora_minutos=vector_horas){
+      hora=hora_minutos[0];
+      minutos=hora_minutos[1];
+      hora_solar(hora,minutos);    
+    }
   }
 }
 
-reloj_de_sol();
+reloj_de_sol_discreto([[12,00],[7,13],[16,23]]);
