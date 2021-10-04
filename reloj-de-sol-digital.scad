@@ -182,7 +182,16 @@ module reloj_de_sol_continuo(){
     // unidades de minuto
     translate([0,8.5*delta_y,0])
       digito(0,alfa(6+20/60),alfa(17+40/60));  
-    // HACER: el resto
+        // decenas de minuto
+    translate([0,3.5*delta_y,0])
+      for(hora=[6:17],
+          minutos=[0,20,40])
+        if((hora+minutos/60) > 6) {
+          minuto_decenas=n_a_digito(minutos,1);
+          digito(minuto_decenas,
+                 alfa(hora+minutos/60),
+                 alfa(hora+minutos/60));
+        }   
   }
 }
 
