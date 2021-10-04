@@ -192,6 +192,8 @@ module reloj_de_sol_continuo(){
                  alfa(hora+minutos/60),
                  alfa(hora+minutos/60));
         }   
+    // separador
+    separador(alfa(6+20/60),alfa(17+40/60));  
   }
 }
 
