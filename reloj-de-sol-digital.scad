@@ -173,4 +173,15 @@ module reloj_de_sol_discreto(vector_horas){
   }
 }
 
-reloj_de_sol_discreto([[12,00],[7,13],[16,23]]);
+module reloj_de_sol_continuo(){
+  delta_y=ancho_pixel+delta_ancho;
+  difference(){
+    cuerpo(largo_reloj);    
+    // unidades de minuto
+    translate([0,8.5*delta_y,0])
+      digito(0,alfa(6+20/60),alfa(17+40/60));  
+    // HACER: el resto
+  }
+}
+
+reloj_de_sol_continuo();
