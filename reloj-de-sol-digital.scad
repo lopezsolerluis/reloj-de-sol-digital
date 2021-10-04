@@ -9,7 +9,7 @@ module semicilindro(h,r,center=false){
 }
 
 hemisferio="sur";
-alto_pixel = 1.6;
+alto_pixel = .75;
 ancho_pixel = 6;
 delta_alto  = 6.5;
 delta_ancho = 1.5;
@@ -196,11 +196,11 @@ module reloj_de_sol_continuo(){
     separador(alfa(6+20/60),alfa(17+40/60));  
     // unidades de hora
     translate([0,-3.5*delta_y,0])
-      for(hora=[6:17]){
+      for(hora=[9:15]){
         hora_unidades=n_a_digito(hora,0);
         digito(hora_unidades,
-               alfa(hora>6?hora:hora+20/60),
-               alfa(hora>6?hora:hora+20/60));
+               alfa(hora),
+               alfa(hora<15 ? hora+50/60 : hora+10/60));
       }        
   }
 }
