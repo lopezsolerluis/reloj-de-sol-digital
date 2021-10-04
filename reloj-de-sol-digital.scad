@@ -33,8 +33,10 @@ function n_a_digito(n,p)=
   truncate(n/pow(10,p))%10;
 
 module haz_de_sol(alfa1,alfa2){
-  D1=H/tan(alfa1);
-  D2=H/tan(alfa2);
+  alfa_min=min(alfa1,alfa2);
+  alfa_max=max(alfa1,alfa2);
+  D1=H/tan(alfa_min);
+  D2=H/tan(alfa_max);
   vertices=[[-alto_pixel/2,0],
             [D2-alto_pixel/2,H],
             [D1+alto_pixel/2,H],
