@@ -175,6 +175,10 @@ module reloj_de_sol_discreto(vector_horas){
   }
 }
 
+/*
+  Reloj de Sol con las horas desde las 9:00 a las 15:10,
+  en intervalos de 20 minutos.
+*/
 module reloj_de_sol_continuo(){
   delta_y=ancho_pixel+delta_ancho;
   difference(){
@@ -209,5 +213,16 @@ module reloj_de_sol_continuo(){
   }
 }
 
-$vpr=[90-alfa(12+40/60),0,90];
-reloj_de_sol_continuo();
+/* Crea un reloj de Sol en función del valor de 'vector_horas'.
+   Ver comentarios en los módulos
+   'reloj_de_sol_continuo' y 'reloj_de_sol_discreto'.
+*/
+module reloj_de_sol(vector_horas){
+  if(vector_horas==undef)
+    reloj_de_sol_continuo();
+  else
+    reloj_de_sol_discreto(vector_horas);
+}
+
+//reloj_de_sol();
+reloj_de_sol([[12,00],[7,13],[16,23]]);
