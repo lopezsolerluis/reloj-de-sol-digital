@@ -9,6 +9,8 @@ module semicilindro(h,r,center=false){
 }
 
 hemisferio="sur";
+texto_1 = "Ab Revolutionibus Astri...";
+texto_2 = "...Girum Orbis Noscimus";
 alto_pixel = .75;
 ancho_pixel = 6;
 delta_alto  = 6.5;
