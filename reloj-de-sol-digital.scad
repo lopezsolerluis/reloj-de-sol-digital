@@ -220,5 +220,15 @@ module reloj_de_sol(vector_horas){
     reloj_de_sol_discreto(vector_horas);
 }
 
-//reloj_de_sol();
-reloj_de_sol([[12,00],[7,13],[16,23]]);
+module texto_circular(texto, size, espesor, radio, angulo){
+  n=len(texto)-1;
+  delta_alfa=angulo/n;
+  for(i=[0:n])
+    rotate([0,0,delta_alfa*i-angulo/2])    
+      translate([radio,0,0])
+        rotate([90,0,90])
+          linear_extrude(espesor)
+            text(texto[i], size=size, font="DejaVu Sans:style=Book", halign="center");
+}
+
+texto_circular(texto="Ab Revolutionibus Astri...", size=5, espesor=3, radio=60, angulo=90);
