@@ -211,17 +211,6 @@ module reloj_de_sol_continuo(){
   }
 }
 
-/* Crea un reloj de Sol en función del valor de 'vector_horas'.
-   Ver comentarios en los módulos
-   'reloj_de_sol_continuo' y 'reloj_de_sol_discreto'.
-*/
-module reloj_de_sol(vector_horas){
-  if(vector_horas==undef)
-    reloj_de_sol_continuo();
-  else
-    reloj_de_sol_discreto(vector_horas);
-}
-
 module texto_circular(texto, size, espesor, radio, angulo){
   n=len(texto)-1;
   delta_alfa=angulo/n;
@@ -233,4 +222,25 @@ module texto_circular(texto, size, espesor, radio, angulo){
             text(texto[i], size=size, font="DejaVu Sans:style=Book", halign="center");
 }
 
-texto_circular(texto="Ab Revolutionibus Astri...", size=5, espesor=3, radio=60, angulo=90);
+/* Crea un reloj de Sol en función del valor de 'vector_horas'.
+   Ver comentarios en los módulos
+   'reloj_de_sol_continuo' y 'reloj_de_sol_discreto'.
+*/
+module reloj_de_sol(vector_horas){
+  difference(){
+    // Reloj
+    if(vector_horas==undef)
+      reloj_de_sol_continuo();
+    else
+      reloj_de_sol_discreto(vector_horas);
+    // Textos
+    translate([0,largo_reloj/2-borde+2.5,0])
+      rotate([0,-90,-90])
+        texto_circular(texto_1,5,2, radio_semicilindro-1.2,165);
+    translate([0,-largo_reloj/2+2.5,0])
+      rotate([0,-90,-90])
+        texto_circular(texto_2,5,2, radio_semicilindro-1.9,165);
+  }
+}
+
+reloj_de_sol();
