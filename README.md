@@ -10,7 +10,7 @@ La base y el cabezal son diseño de **Ramiro Gabriel Arambarri**.
 
 ###  _Non est ad astra mollis e terris via_
 
-La frase que adorna el reloj es de Séneca el joven, y también nos fue acercada por Ramiro.
+La frase que adorna el reloj es de Séneca el joven, y también nos fue acercada por Ramiro. No puedo imaginar una leyenda más apropiada para nuestro curso... :)
 
 ### Armado
 
