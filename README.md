@@ -16,5 +16,5 @@ La frase que adorna el reloj es de Séneca el joven, y también nos fue acercada
 
 Las imágenes creo que despejan cualquier duda acerca del armado del reloj.
 
-![Reloj Armado](https://github.com/lopezsolerluis/reloj-de-sol-digital/blob/main/reloj-armado.png?raw=true)
-![Reloj Desarmado](https://github.com/lopezsolerluis/reloj-de-sol-digital/blob/main/reloj-desarmado.png?raw=true)
+![Reloj Armado](https://github.com/lopezsolerluis/reloj-de-sol-digital/blob/main/STL/reloj-armado.png?raw=true)
+![Reloj Desarmado](https://github.com/lopezsolerluis/reloj-de-sol-digital/blob/main/STL/reloj-desarmado.png?raw=true)
