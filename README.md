@@ -16,5 +16,7 @@ La frase que adorna el reloj es de Séneca el joven, y también nos fue acercada
 
 Las imágenes creo que despejan cualquier duda acerca del armado del reloj.
 
+Las tolerancias de los orificios y encastres fueron pensadas para mi impresora 3D; es posible que quien confíe en los STLs ofrecidos deba apelar a los servicios de las limas y los pegamentos. ;)
+
 ![Reloj Armado](https://github.com/lopezsolerluis/reloj-de-sol-digital/blob/main/STL/reloj-armado.png?raw=true)
 ![Reloj Desarmado](https://github.com/lopezsolerluis/reloj-de-sol-digital/blob/main/STL/reloj-desarmado.png?raw=true)
